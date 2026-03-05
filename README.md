@@ -41,4 +41,7 @@ pnpm --filter @bulletproof/backend test:cov
 - [Architecture Decision Records (ADR)](./docs/adr/README.md)
 
 ## Contributing
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for workflow, issue, and PR expectations.
+
+## Repository Guidelines
 See [AGENTS.md](./AGENTS.md) for repository contribution guidelines.

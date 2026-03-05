@@ -10,4 +10,6 @@ ADRs capture significant technical decisions and the reasoning behind them.
 
 ## Index
 - [0001 - Use ADRs in this repository](./0001-use-adrs-in-this-repository.md)
+- [0002 - Keep ESLint configs separate](./0002-keep-eslint-configs-separate.md)
+- [0003 - Choose TanStack ecosystem over Next.js](./0003-choose-tanstack-ecosystem-over-nextjs.md)
 - [ADR Template](./template.md)
