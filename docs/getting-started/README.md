@@ -71,3 +71,10 @@ Run container:
 ```bash
 docker run --rm -p 3000:3000 bulletproof-frontend:local
 ```
+
+## CI Notes
+On GitHub, PRs trigger path-filtered checks:
+- Backend changes: backend test workflow.
+- Frontend/graphql-client changes: frontend build workflow.
+
+Pushes to `main` trigger path-filtered Docker publish workflows for backend/frontend images to GHCR.

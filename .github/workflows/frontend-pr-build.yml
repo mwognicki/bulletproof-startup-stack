@@ -1,0 +1,61 @@
+name: Frontend PR Build Check
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    paths:
+      - "apps/frontend/**"
+      - "packages/graphql-client/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - "turbo.json"
+      - ".github/workflows/frontend-pr-build.yml"
+
+jobs:
+  build-frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Resolve pnpm store path
+        id: pnpm-store
+        run: echo "path=$(pnpm store path --silent)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-store.outputs.path }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Cache Turbo artifacts
+        uses: actions/cache@v4
+        with:
+          path: |
+            .turbo
+            node_modules/.cache/turbo
+          key: ${{ runner.os }}-turbo-frontend-${{ github.base_ref }}-${{ hashFiles('pnpm-lock.yaml', 'turbo.json', 'apps/frontend/**', 'packages/graphql-client/**') }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-frontend-${{ github.base_ref }}-
+            ${{ runner.os }}-turbo-frontend-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build frontend (PR check)
+        run: pnpm --filter @bulletproof/frontend build

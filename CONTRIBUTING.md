@@ -15,6 +15,15 @@ Run relevant checks before opening a PR:
 - `pnpm --filter @bulletproof/backend build`
 - `pnpm --filter @bulletproof/frontend build`
 
+## GitHub Workflows
+CI/CD automation lives in `.github/workflows` and is path-filtered:
+- `backend-pr-tests.yml`: runs backend tests on PR (`opened`, `synchronize`) when backend-relevant files change.
+- `frontend-pr-build.yml`: runs frontend build on PR (`opened`, `synchronize`) when frontend/graphql-client files change.
+- `backend-docker-ghcr.yml`: on push to `main`, builds/publishes backend Docker image to GHCR.
+- `frontend-docker-ghcr.yml`: on push to `main`, builds/publishes frontend Docker image to GHCR.
+
+If your change affects backend/frontend build inputs (app code, Dockerfiles, workspace lock/config files), expect the corresponding workflow to run.
+
 ## Commit Guidelines
 Use short, imperative, scoped commit messages:
 - `feat(frontend): add dashboard route`
