@@ -40,6 +40,9 @@ pnpm --filter @bulletproof/frontend build
 pnpm --filter @bulletproof/backend test
 pnpm --filter @bulletproof/backend test:cov
 
+# Backend GraphQL endpoint (when running locally)
+# http://localhost:8080/graphql
+
 # Build backend Docker image
 docker build -f docker/backend/Dockerfile -t bulletproof-backend:local .
 
