@@ -39,3 +39,29 @@ pnpm --filter @bulletproof/backend test
 pnpm --filter @bulletproof/backend test:cov
 pnpm --filter @bulletproof/frontend build
 ```
+
+## Backend Docker (Optional)
+A production-oriented backend Dockerfile is available at `docker/backend/Dockerfile`.
+
+Build image:
+```bash
+docker build -f docker/backend/Dockerfile -t bulletproof-backend:local .
+```
+
+Run container:
+```bash
+docker run --rm -p 8080:8080 bulletproof-backend:local
+```
+
+## Frontend Docker (Optional)
+A production-oriented frontend Dockerfile is available at `docker/frontend/Dockerfile`.
+
+Build image:
+```bash
+docker build -f docker/frontend/Dockerfile -t bulletproof-frontend:local .
+```
+
+Run container:
+```bash
+docker run --rm -p 3000:3000 bulletproof-frontend:local
+```
