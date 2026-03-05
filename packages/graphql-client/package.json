@@ -1,7 +1,15 @@
 {
   "name": "@bulletproof/graphql-client",
   "version": "0.1.0",
-  "description": "",
+  "private": true,
+  "description": "Shared typed GraphQL client/codegen package for the bulletproof startup stack.",
+  "author": "Marek Kapusta-Ognicki <marek@ognicki.ooo>",
+  "license": "MIT",
+  "packageManager": "pnpm@10.18.3",
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=10"
+  },
   "files": [
     "./dist"
   ],
@@ -20,13 +28,8 @@
     "gql:schema": "graphql-codegen --config codegen-schema.ts",
     "gql:all": "pnpm gql:schema && pnpm gql:client",
     "build": "vite build",
-    "test": "echo \"GQL Client: No tests! OK\" && exit 0",
-    "lint": "eslint --config ./.eslintrc.js ./src"
+    "test": "echo \"graphql-client: no tests configured\" && exit 0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.18.3",
   "dependencies": {
     "@0no-co/graphqlsp": "^1.15.2",
     "@apollo/client": "^4.1.6",
