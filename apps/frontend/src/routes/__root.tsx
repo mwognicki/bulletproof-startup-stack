@@ -41,8 +41,10 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
             <head>
                 <HeadContent />
             </head>
-            {children}
-            <Scripts />
+            <body>
+                {children}
+                <Scripts />
+            </body>
         </html>
     );
 }
