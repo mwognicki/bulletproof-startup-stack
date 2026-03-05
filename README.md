@@ -14,6 +14,7 @@ This repository is currently **WIP** and is being developed intensively.
 ## Monorepo Structure
 - `apps/backend` - NestJS API application.
 - `apps/frontend` - TanStack + Vite frontend application.
+- `packages/graphql-client` - shared typed GraphQL client/codegen package.
 - `docs` - Project documentation, architecture notes, and ADRs.
 
 ## Quick Start
@@ -35,10 +36,14 @@ pnpm turbo run build
 # Build individual apps
 pnpm --filter @bulletproof/backend build
 pnpm --filter @bulletproof/frontend build
+pnpm --filter @bulletproof/graphql-client build
 
 # Run backend tests
 pnpm --filter @bulletproof/backend test
 pnpm --filter @bulletproof/backend test:cov
+
+# Generate GraphQL client artifacts
+pnpm --filter @bulletproof/graphql-client gql:all
 
 # Backend GraphQL endpoint (when running locally)
 # http://localhost:8080/graphql
@@ -58,6 +63,7 @@ docker build -f docker/frontend/Dockerfile -t bulletproof-frontend:local .
 - [Architecture Decision Records (ADR)](./docs/adr/README.md)
 - [Backend App Architecture](./apps/backend/README.md)
 - [Frontend App Architecture](./apps/frontend/README.md)
+- [GraphQL Client Package Architecture](./packages/graphql-client/README.md)
 
 ## Contributing
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for workflow, issue, and PR expectations.

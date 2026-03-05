@@ -24,6 +24,11 @@ The repository is a `pnpm` workspace orchestrated by Turborepo:
 - Uses frontend conventions compatible with UI-kit workflows (see ADR 0004, ADR 0003).
 - Containerization: dedicated multistage Dockerfile at `docker/frontend/Dockerfile`.
 
+## Shared Packages
+- `packages/graphql-client`: typed GraphQL client/codegen package (`@bulletproof/graphql-client`).
+- Generates schema snapshot and typed client artifacts (`schema.graphql`, `src/gql/*`).
+- Provides shared GraphQL types/documents for app-level consumption.
+
 ## Turborepo Usage
 Turbo is used as the monorepo task engine:
 - Graph-aware task scheduling for builds/tests.

@@ -32,6 +32,12 @@ Related docs:
 - [ADR 0003 - Choose TanStack ecosystem over Next.js](../adr/0003-choose-tanstack-ecosystem-over-nextjs.md)
 - [ADR 0004 - Use tsconfig path aliases only in backend](../adr/0004-use-tsconfig-path-aliases-only-in-backend.md)
 
+## Shared GraphQL Client Layer
+The monorepo includes `@bulletproof/graphql-client` as a shared package for GraphQL schema/client codegen and typed artifacts. This keeps API typing concerns centralized and reusable, instead of duplicating GraphQL typing logic in each consuming app.
+
+Related docs:
+- [GraphQL Client Package](../../packages/graphql-client/README.md)
+
 ## Engineering Hygiene As A Core Concept
 Detailed linting and formatting are treated as collaboration tooling, not only style enforcement.
 

@@ -42,6 +42,8 @@ pnpm turbo run build
 pnpm --filter @bulletproof/backend test
 pnpm --filter @bulletproof/backend test:cov
 pnpm --filter @bulletproof/frontend build
+pnpm --filter @bulletproof/graphql-client gql:all
+pnpm --filter @bulletproof/graphql-client build
 ```
 
 ## Backend Docker (Optional)
