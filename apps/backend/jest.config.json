@@ -1,0 +1,29 @@
+{
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
+  "rootDir": ".",
+  "testRegex": ".*\\.spec\\.ts$",
+  "transform": {
+    "^.+\\.(t)s$": [
+      "ts-jest",
+      {
+        "tsconfig": "./tsconfig.json"
+      }
+    ]
+  },
+  "collectCoverageFrom": [
+    "**/*.(t|j)s"
+  ],
+  "moduleNameMapper": {
+    "@bulletproof/backend/(.*)$": "<rootDir>/src/$1"
+  },
+  "coverageDirectory": "../coverage",
+  "testEnvironment": "node",
+  "testPathIgnorePatterns": [
+    "/dist/",
+    "/node_modules/"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "extends": ["//"],
+  "tasks": {
+    "build": {
+      "outputs": ["./dist"],
+      "cache": true,
+      "persistent": false
+    },
+    "start:dev": {
+      "outputs": ["./dist"],
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": true
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "cache": true,
+      "persistent": false
+    },
+    "lint": {
+      "cache": false,
+      "persistent": false
+    }
+  }
+}
