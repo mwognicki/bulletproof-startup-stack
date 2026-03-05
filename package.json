@@ -1,15 +1,21 @@
 {
   "name": "bulletproof-startup-stack",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Production-oriented startup stack foundations with Turborepo, NestJS backend, and TanStack frontend.",
+  "author": "Marek Kapusta-Ognicki <marek@ognicki.ooo>",
   "license": "MIT",
   "packageManager": "pnpm@10.18.3",
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=10"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev:backend": "pnpm --filter @bulletproof/backend start:dev",
+    "dev:frontend": "pnpm --filter @bulletproof/frontend dev",
+    "test": "pnpm --filter @bulletproof/backend test"
+  },
   "devDependencies": {
     "turbo": "^2.8.13"
   }
