@@ -65,6 +65,15 @@ docker build -f docker/frontend/Dockerfile -t bulletproof-frontend:local .
 - [Frontend App Architecture](./apps/frontend/README.md)
 - [GraphQL Client Package Architecture](./packages/graphql-client/README.md)
 
+## CI/CD Pipelines
+GitHub Actions workflows are defined in `.github/workflows`:
+- `backend-pr-tests.yml`: PR check for backend changes (runs backend tests).
+- `frontend-pr-build.yml`: PR check for frontend/graphql-client changes (runs frontend build).
+- `backend-docker-ghcr.yml`: on push to `main`, builds and publishes backend image to GHCR.
+- `frontend-docker-ghcr.yml`: on push to `main`, builds and publishes frontend image to GHCR.
+
+All workflows are path-filtered and run only for relevant file changes.
+
 ## Contributing
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for workflow, issue, and PR expectations.
 
