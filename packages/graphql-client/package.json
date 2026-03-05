@@ -1,0 +1,51 @@
+{
+  "name": "@bulletproof/graphql-client",
+  "version": "0.1.0",
+  "description": "",
+  "files": [
+    "./dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "gql:client": "graphql-codegen --config codegen-client.ts",
+    "gql:schema": "graphql-codegen --config codegen-schema.ts",
+    "gql:all": "pnpm gql:schema && pnpm gql:client",
+    "build": "vite build",
+    "test": "echo \"GQL Client: No tests! OK\" && exit 0",
+    "lint": "eslint --config ./.eslintrc.js ./src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.18.3",
+  "dependencies": {
+    "@0no-co/graphqlsp": "^1.15.2",
+    "@apollo/client": "^4.1.6",
+    "@graphql-typed-document-node/core": "^3.2.0",
+    "graphql": "^16.13.1",
+    "graphql-request": "^7.4.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^6.1.2",
+    "@graphql-codegen/client-preset": "^5.2.3",
+    "@graphql-codegen/schema-ast": "^5.0.0",
+    "@graphql-codegen/typescript": "^5.0.8",
+    "@graphql-codegen/typescript-operations": "^5.0.8",
+    "@graphql-codegen/typescript-react-apollo": "^4.4.0",
+    "@graphql-codegen/typescript-react-query": "^6.1.2",
+    "@types/node": "^25.3.3",
+    "dotenv": "^17.3.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vite-plugin-dts": "^4.5.4"
+  }
+}

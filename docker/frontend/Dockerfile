@@ -15,6 +15,7 @@ COPY package.json pnpm-lock.yaml \
      pnpm-workspace.yaml turbo.json \
      ./
 COPY apps/frontend/package.json apps/frontend/turbo.json ./apps/frontend/
+COPY packages/graphql-client packages/graphql-client
 
 RUN pnpm --frozen-lockfile --filter @bulletproof/frontend... install
 
