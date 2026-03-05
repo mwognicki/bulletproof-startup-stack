@@ -14,7 +14,8 @@
     "build": "turbo run build",
     "dev:backend": "pnpm --filter @bulletproof/backend start:dev",
     "dev:frontend": "pnpm --filter @bulletproof/frontend dev",
-    "test": "pnpm --filter @bulletproof/backend test"
+    "test": "pnpm --filter @bulletproof/backend test",
+    "turbo": "turbo"
   },
   "devDependencies": {
     "turbo": "^2.8.13"

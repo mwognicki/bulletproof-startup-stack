@@ -322,8 +322,7 @@ vite.config.ts.timestamp_*
 **/.tanstack
 
 dev/
+dev/
 
 # Ignore all JetBrains project files completely
 .idea/
-
-.turbo/*
