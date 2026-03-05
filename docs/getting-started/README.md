@@ -34,6 +34,8 @@ pnpm --filter @bulletproof/frontend dev
 
 Frontend styling is powered by Tailwind CSS v4. Global styles are configured in `apps/frontend/src/styles/app.css` and linked from `apps/frontend/src/routes/__root.tsx`.
 
+Backend API is currently exposed as GraphQL at `http://localhost:8080/graphql` with a basic `health` query in place.
+
 ## Useful Commands
 ```bash
 pnpm turbo run build

@@ -4,21 +4,30 @@ This app is the backend service layer of the monorepo, built with NestJS and Typ
 
 ## Core Stack
 - NestJS (`@nestjs/*`) as the application framework
+- GraphQL (code-first) via `@nestjs/graphql` + Apollo
 - TypeScript for typed service/module development
 - Jest for unit/integration testing
 
 ## Significant Libraries
 - `nestjs-pino` + `pino-http` for structured HTTP logging
 - `@nestjs/config` for configuration management
+- `@nestjs/graphql` + `@nestjs/apollo` + `graphql` for API schema/runtime
 - `reflect-metadata` and `rxjs` as standard NestJS runtime dependencies
 
 ## Current Architecture Shape
 - Entry point: `src/main.ts`
 - Root module: `src/main.module.ts`
 - Logging configuration: `src/config/logger.config.ts`
+- Basic resolver: `src/main.resolver.ts` (`health` query)
 - TypeScript path alias: `@bulletproof/backend/*` (see ADR 0004)
 
 The backend is organized around NestJS modules and is intended to evolve toward clear domain/service boundaries as features grow.
+
+## GraphQL Setup
+- Driver: Apollo (`ApolloDriver`)
+- Mode: code-first schema generation (`autoSchemaFile: true`)
+- Endpoint path: `/graphql`
+- Introspection/playground: enabled in current bootstrap
 
 ## Development Commands
 Run from repository root:

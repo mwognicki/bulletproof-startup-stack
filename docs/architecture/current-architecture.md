@@ -8,8 +8,10 @@ The repository is a `pnpm` workspace orchestrated by Turborepo:
 
 ## Backend (`apps/backend`)
 - Framework: NestJS.
+- API style: GraphQL with Nest Apollo driver (code-first schema).
 - Entry points: `src/main.ts`, `src/main.module.ts`.
 - Logging config: `src/config/logger.config.ts`.
+- Basic resolver: `src/main.resolver.ts` (`health` query).
 - TypeScript path alias enabled: `@bulletproof/backend/*` (see ADR 0004).
 - Tests: Jest with `*.spec.ts`.
 - Containerization: dedicated multistage Dockerfile at `docker/backend/Dockerfile`.
