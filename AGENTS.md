@@ -38,6 +38,7 @@ Run commands from repo root:
 
 ## Commit & Pull Request Guidelines
 - Current history is minimal (`Initial commit`), so keep commits short, imperative, and scoped (example: `feat(frontend): add auth guard`).
+- Never continue ongoing feature work on `main`; if branch context is lost, switch back to the dedicated feature branch before editing or committing.
 PRs should include:
 - A clear summary of behavior changes.
 - Linked issue/task ID.
