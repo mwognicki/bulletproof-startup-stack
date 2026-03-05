@@ -1,0 +1,18 @@
+# Documentation
+
+This directory contains project documentation that should evolve with the codebase.
+
+## Structure
+- `getting-started/`: Setup and onboarding guides.
+- `architecture/`: System design docs, diagrams, and technical overviews.
+- `adr/`: Architecture Decision Records (ADRs) for non-trivial technical decisions.
+
+## How To Extend
+1. Add focused documents close to the relevant section.
+2. Keep each document scoped to one topic or decision.
+3. Link new docs from this index to keep discovery simple.
+
+## Current Index
+- [Getting Started](./getting-started/README.md)
+- [Architecture](./architecture/README.md)
+- [Architecture Decision Records](./adr/README.md)
