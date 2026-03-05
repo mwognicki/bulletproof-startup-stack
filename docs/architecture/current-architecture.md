@@ -15,9 +15,10 @@ The repository is a `pnpm` workspace orchestrated by Turborepo:
 - Containerization: dedicated multistage Dockerfile at `docker/backend/Dockerfile`.
 
 ## Frontend (`apps/frontend`)
-- Stack: TanStack ecosystem + React + Vite.
+- Stack: TanStack ecosystem + React + Vite + Tailwind CSS v4.
 - Routing: TanStack Router (`src/router.tsx`, `src/routes/*`).
 - Route tree generation: `src/routeTree.gen.ts`.
+- Styling: Tailwind loaded from `src/styles/app.css`, linked in root route (`src/routes/__root.tsx`), with Vite integration via `@tailwindcss/vite`.
 - Uses frontend conventions compatible with UI-kit workflows (see ADR 0004, ADR 0003).
 - Containerization: dedicated multistage Dockerfile at `docker/frontend/Dockerfile`.
 

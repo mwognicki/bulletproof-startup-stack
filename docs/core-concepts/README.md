@@ -24,9 +24,9 @@ Related docs:
 NestJS gives a practical modular structure that supports clear service boundaries as the backend evolves. Combined with TypeScript and Jest, it provides a reliable base for production-focused development, with straightforward extension points for configuration, logging, and future API capabilities.
 
 ### Frontend Core
-- TanStack ecosystem + React + Vite
+- TanStack ecosystem + React + Vite + Tailwind CSS v4
 
-On the frontend, the TanStack ecosystem keeps routing and data-heavy UI concerns in a consistent model, which helps avoid fragmentation over time. React + Vite keeps local development fast, and the stack remains compatible with modern UI-kit workflows.
+On the frontend, the TanStack ecosystem keeps routing and data-heavy UI concerns in a consistent model, which helps avoid fragmentation over time. React + Vite keeps local development fast, and Tailwind provides a scalable, utility-first styling layer that works well with component-driven workflows and UI-kit conventions.
 
 Related docs:
 - [ADR 0003 - Choose TanStack ecosystem over Next.js](../adr/0003-choose-tanstack-ecosystem-over-nextjs.md)

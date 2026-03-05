@@ -32,6 +32,8 @@ Start frontend (in a separate terminal):
 pnpm --filter @bulletproof/frontend dev
 ```
 
+Frontend styling is powered by Tailwind CSS v4. Global styles are configured in `apps/frontend/src/styles/app.css` and linked from `apps/frontend/src/routes/__root.tsx`.
+
 ## Useful Commands
 ```bash
 pnpm turbo run build
