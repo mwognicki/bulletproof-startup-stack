@@ -7,6 +7,7 @@ This directory contains project documentation that should evolve with the codeba
 - `core-concepts/`: Foundational technical choices and rationale.
 - `architecture/`: System design docs, diagrams, and technical overviews.
 - `adr/`: Architecture Decision Records (ADRs) for non-trivial technical decisions.
+- `../packages/*/README.md`: Package-level architecture docs.
 
 ## How To Extend
 1. Add focused documents close to the relevant section.
@@ -18,3 +19,4 @@ This directory contains project documentation that should evolve with the codeba
 - [Core Concepts](./core-concepts/README.md)
 - [Architecture](./architecture/README.md)
 - [Architecture Decision Records](./adr/README.md)
+- [GraphQL Client Package](../packages/graphql-client/README.md)
