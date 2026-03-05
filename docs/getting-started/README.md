@@ -1,12 +1,41 @@
 # Getting Started
 
-Use this section for onboarding and local setup instructions.
+This guide covers local setup for the current monorepo.
 
-## Suggested Topics
-- Prerequisites and tool versions
-- Local environment setup
-- Running frontend and backend locally
-- Common troubleshooting steps
+## Prerequisites
+- Node.js `>= 22`
+- `pnpm` `10.x` (recommended and used by this repository)
 
-## Status
-Initial placeholder. Add step-by-step setup instructions as the project evolves.
+Check versions:
+```bash
+node -v
+pnpm -v
+```
+
+## Setup
+```bash
+git clone git@github.com:mwognicki/bulletproof-startup-stack.git
+cd bulletproof-startup-stack
+pnpm install
+```
+
+`npm` or `yarn` can work technically, but `pnpm` is the supported workflow.
+
+## Run Locally
+Start backend:
+```bash
+pnpm --filter @bulletproof/backend start:dev
+```
+
+Start frontend (in a separate terminal):
+```bash
+pnpm --filter @bulletproof/frontend dev
+```
+
+## Useful Commands
+```bash
+pnpm turbo run build
+pnpm --filter @bulletproof/backend test
+pnpm --filter @bulletproof/backend test:cov
+pnpm --filter @bulletproof/frontend build
+```
