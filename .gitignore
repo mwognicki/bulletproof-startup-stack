@@ -323,3 +323,6 @@ vite.config.ts.timestamp_*
 
 dev/
 dev/
+
+# Ignore all JetBrains project files completely
+.idea/
