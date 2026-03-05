@@ -29,5 +29,15 @@ pnpm --filter @bulletproof/backend test
 pnpm --filter @bulletproof/backend test:cov
 ```
 
+## Containerization
+- Dockerfile: `docker/backend/Dockerfile`
+- Base image: `ghcr.io/mwognicki/nodejs-pnpm:22-10`
+- Build strategy: multistage (`installer` -> `builder` -> `prune` -> `runtime`) to keep runtime image small.
+
+Build from repository root:
+```bash
+docker build -f docker/backend/Dockerfile -t bulletproof-backend:local .
+```
+
 ## Maintenance Note
 Treat this file as living documentation. Update it when major backend architecture, runtime libraries, or operational conventions change.

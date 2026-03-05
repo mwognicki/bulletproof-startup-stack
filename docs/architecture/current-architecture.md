@@ -12,12 +12,14 @@ The repository is a `pnpm` workspace orchestrated by Turborepo:
 - Logging config: `src/config/logger.config.ts`.
 - TypeScript path alias enabled: `@bulletproof/backend/*` (see ADR 0004).
 - Tests: Jest with `*.spec.ts`.
+- Containerization: dedicated multistage Dockerfile at `docker/backend/Dockerfile`.
 
 ## Frontend (`apps/frontend`)
 - Stack: TanStack ecosystem + React + Vite.
 - Routing: TanStack Router (`src/router.tsx`, `src/routes/*`).
 - Route tree generation: `src/routeTree.gen.ts`.
 - Uses frontend conventions compatible with UI-kit workflows (see ADR 0004, ADR 0003).
+- Containerization: dedicated multistage Dockerfile at `docker/frontend/Dockerfile`.
 
 ## Turborepo Usage
 Turbo is used as the monorepo task engine:

@@ -28,5 +28,15 @@ pnpm --filter @bulletproof/frontend dev
 pnpm --filter @bulletproof/frontend build
 ```
 
+## Containerization
+- Dockerfile: `docker/frontend/Dockerfile`
+- Base image: `ghcr.io/mwognicki/nodejs-pnpm:22-10`
+- Build strategy: multistage (`installer` -> `builder` -> `runtime`) to keep runtime image focused on build output.
+
+Build from repository root:
+```bash
+docker build -f docker/frontend/Dockerfile -t bulletproof-frontend:local .
+```
+
 ## Maintenance Note
 Treat this file as living documentation. Update it when routing strategy, state/data model, or core frontend runtime/tooling decisions change.

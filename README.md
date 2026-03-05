@@ -39,6 +39,12 @@ pnpm --filter @bulletproof/frontend build
 # Run backend tests
 pnpm --filter @bulletproof/backend test
 pnpm --filter @bulletproof/backend test:cov
+
+# Build backend Docker image
+docker build -f docker/backend/Dockerfile -t bulletproof-backend:local .
+
+# Build frontend Docker image
+docker build -f docker/frontend/Dockerfile -t bulletproof-frontend:local .
 ```
 
 ## Documentation
